@@ -12,7 +12,6 @@ package proyectocaracol;
 public class Curso {
     
     private int cupoCurso;
-    
     public String nombre;
     public String descripcion; 
     public int costo;
