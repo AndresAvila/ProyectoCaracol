@@ -9,13 +9,29 @@ package proyectocaracol;
  *
  * @author javo
  */
-public class Alumno {
+public class Alumno  {
     
     private String nombre;
+    public String usuario;
+    public String contraseña;
     private String colonia;
     public int alumnoID;
     public int edad;
     public Curso cursoID;
+    
+    public String getUsuario(){
+        return usuario;
+    }
+    public void setUsuario(String usu){
+        usuario = usu;
+    }
+     public String getContraseña(){
+        return contraseña;
+    }
+    public void setContraseña(String con){
+        contraseña = con;
+    }
+    
     
     public String getNombre(){
         return nombre;

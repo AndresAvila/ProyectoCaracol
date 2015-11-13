@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package proyectocaracol;
-
+import java.util.Scanner;
 /**
  *
  * @author javo
  */
-public class Curso {
+public class Curso extends Pagar {
     
     private int cupoCurso;
     public String nombre;
@@ -74,14 +74,28 @@ public class Curso {
     }
     
     
-    public int buscaCurso(String categoria, Curso curso)
-    {
-        for(int i = 0; i<=1; i++){
-               
-            if(categoria == curso.getCategoria()){
-                    System.out.println("POPO");
+    public String buscaCurso(String categoria, Curso curso1, Alumno alumno1)
+    {   
+        String inscribir = "";
+        Scanner reader = new Scanner(System.in);
+        if(categoria.equals(curso1.getCategoria())){    
+            System.out.println("a) Nombre del Curso: " + curso1.getNombre());
+            System.out.println("b) ..." );
+            String curso = reader.next();
+            if(curso.equals(curso1.getNombre())){
+                System.out.println("Categoría: " + curso1.getCategoria());
+                System.out.println("Descripcion: " + curso1.getDescripcion());
+                System.out.println("Costo: " + curso1.getCosto());
+                System.out.println("Cupo: " + curso1.getCupo());
+                System.out.println("Inscribir / Regresar");
+                String opcion = reader.next();
+                if(opcion.equals("Inscribir")){
+                     inscribir = generarPago(alumno1, curso1, 123);
+                }
             }
         }
-        return 0;
+            
+        return inscribir;    
+        
     }
 }
