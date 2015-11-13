@@ -16,6 +16,17 @@ public class ProyectoCaracol {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+         Curso curso1 = new Curso();
+        
+        curso1.setNombre("Futbol");
+        curso1.setCosto(20);
+        curso1.setCupo(25);
+        curso1.setCursoId(1);
+        curso1.setCategoria("Deportes");
+        curso1.setDescripcion("Muy padre curso ^_");
+        
+        
     }
     
 }
