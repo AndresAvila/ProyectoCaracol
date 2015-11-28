@@ -5,7 +5,7 @@
  */
 
 
-package proyectocaracol;
+package org.proyectocaracol;
 import java.util.Scanner;
 /**
  *
@@ -18,7 +18,7 @@ public class ProyectoCaracol {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        /*
         Curso curso1 = new Curso();
         
         curso1.setNombre("Futbol");
@@ -59,7 +59,7 @@ public class ProyectoCaracol {
         String mensaje = curso1.buscaCurso(categoria, curso1, alumno1);
         System.out.println(mensaje);
         
-            
+            */
         
         
         
