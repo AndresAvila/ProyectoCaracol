@@ -82,6 +82,11 @@ public class Vista_Principal extends javax.swing.JFrame  {
         });
 
         jButton2.setText("Registrarse");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -154,16 +159,18 @@ public class Vista_Principal extends javax.swing.JFrame  {
             char[] c = jPasswordField2.getPassword();
             String contraseña = String.valueOf(c);
             if(nombre.equals("administrador") && contraseña.equals("caracol")){
-                
+                this.setVisible(false);
+                Menu_Administrador a = new Menu_Administrador();
+                a.setVisible(true);
             }
-
+            int cont = 0;
             while (rs.next()){
-
+                
                 String nom = rs.getString("NOMBRE");
                 String contr = rs.getString("CONTRASEÑA");
                 String correo = rs.getString("CORREO");
                 String dir = rs.getString("DIRECCION");
-                int tel = rs.getInt("TELEFONO");
+                String tel = rs.getString("TELEFONO");
                 
                 if(nom.equals(nombre) && contr.equals(contraseña)){
                     alumno = new Alumno(nom, correo, tel, dir, contr);
@@ -175,10 +182,17 @@ public class Vista_Principal extends javax.swing.JFrame  {
 
                     //siguiente panel
                 }
-                
+                else{
+//                    if(cont==0){
+//                        JOptionPane.showMessageDialog(this, "Usuario inválido");
+//                        cont++;
+//                    }
+                        
+                        
+                }
 
             }
-            JOptionPane.showMessageDialog(this, "Usuario inválido");
+            
         }
         catch (SQLException err){
             JOptionPane.showMessageDialog(this, err.getMessage());
@@ -189,6 +203,12 @@ public class Vista_Principal extends javax.swing.JFrame  {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+        Registro r = new Registro();
+        r.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

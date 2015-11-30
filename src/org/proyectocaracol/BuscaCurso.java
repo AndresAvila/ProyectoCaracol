@@ -81,6 +81,7 @@ public class BuscaCurso extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +102,13 @@ public class BuscaCurso extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
 
+        jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -112,23 +120,27 @@ public class BuscaCurso extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(303, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton2))
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
                 .addGap(36, 36, 36)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(jButton1)
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,14 +163,17 @@ public class BuscaCurso extends javax.swing.JFrame {
             String SQL3 = "select * from ANDRESAVILA.CURSO where NOMBRE = '" + cursoSelec +"'";
             rs = stmt.executeQuery(SQL3);
             if(rs.next()){
-                curso = new Curso(rs.getString("nombre"), rs.getInt("clave"), rs.getString("descripcion"), rs.getString("instructor"), rs.getDouble("costo"), rs.getInt("cupo"));
+                curso = new Curso(rs.getString("nombre"), rs.getString("clave"), rs.getString("descripcion"), rs.getString("instructor"), rs.getString("costo"), rs.getString("cupo"));
             }
+            String query2 = "UPDATE AlumnoInscribeCurso SET curso = '"+cursoSelec+"' WHERE alumno = '"+jLabel2.getText()+"'";
+            stmt.executeUpdate(query2);
             
         }
         catch (SQLException err){
             JOptionPane.showMessageDialog(this, err.getMessage());
         }
-        if(curso.getCupo()<0){
+       
+        if(Integer.parseInt(curso.getCupo())>0){
            this.setVisible(false);
            FichaPago f = new FichaPago();
            f.setVisible(true); 
@@ -172,6 +187,12 @@ public class BuscaCurso extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+        Vista_Principal f = new Vista_Principal();
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,6 +231,7 @@ public class BuscaCurso extends javax.swing.JFrame {
     public String usuario;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JLabel jLabel2;

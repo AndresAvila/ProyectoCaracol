@@ -11,14 +11,14 @@ package org.proyectocaracol;
 public class Curso {
     
     private String nombre;
-    private final int clave;
+    private final String clave;
     private String descripcion;
     private String instructor;
-    private double costo;
-    private int cupo;
+    private String costo;
+    private String cupo;
     
-    public Curso(String nombre, int clave, String descripcion, String instructor,
-            double costo, int cupo) {
+    public Curso(String nombre, String clave, String descripcion, String instructor,
+            String costo, String cupo) {
         this.nombre = nombre;
         this.clave = clave;
         this.descripcion = descripcion;
@@ -31,7 +31,7 @@ public class Curso {
         return this.nombre;
     }
     
-    public int getClave() {
+    public String getClave() {
         return this.clave;
     }
     
@@ -51,22 +51,23 @@ public class Curso {
         this.instructor = instructor;
     }
     
-    public double getCosto() {
+    public String getCosto() {
         return this.costo;
     }
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
     
-    public void setCosto(double costo) {
+    public void setCosto(String costo) {
         this.costo = costo;
     }
     
-    public int getCupo() {
+    public String getCupo() {
         return this.cupo;
     }
+   
     
-    public void setCupo(int cupo) {
+    public void setCupo(String cupo) {
         this.cupo = cupo;
     }
     
