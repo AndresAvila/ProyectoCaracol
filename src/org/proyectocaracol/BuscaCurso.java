@@ -26,8 +26,8 @@ public class BuscaCurso extends javax.swing.JFrame {
             
             //jPanel3.setVisible(false);
             String host = "jdbc:derby://localhost:1527/Caracol";
-            String username = "javo";
-            String password = "83560765";
+            String username = "AndresAvila";
+            String password = "kakaroto";
 //            Vista_Principal v = new Vista_Principal();
 //            String a = Vista_Principal.alumno.getNombre();
             con = DriverManager.getConnection(host, username, password);
@@ -99,7 +99,6 @@ public class BuscaCurso extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 204, 204));
         jButton1.setText("Inscribir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +110,6 @@ public class BuscaCurso extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 204, 204));
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

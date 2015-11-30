@@ -25,8 +25,8 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
             
             //jPanel3.setVisible(false);
             String host = "jdbc:derby://localhost:1527/Caracol";
-            String username = "Javo";
-            String password = "83560765";
+            String username = "AndresAvila";
+            String password = "kakaroto";
 //            Vista_Principal v = new Vista_Principal();
 //            String a = Vista_Principal.alumno.getNombre();
             con = DriverManager.getConnection(host, username, password);
