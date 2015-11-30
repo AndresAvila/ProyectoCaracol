@@ -10,7 +10,7 @@ package org.proyectocaracol;
  */
 public class Curso {
     
-    private final String nombre;
+    private  String nombre;
     private final int clave;
     private String descripcion;
     private String instructor;
@@ -61,6 +61,10 @@ public class Curso {
     
     public int getCupo() {
         return this.cupo;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     public void setCupo(int cupo) {
