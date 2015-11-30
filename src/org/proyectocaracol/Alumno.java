@@ -13,11 +13,11 @@ public class Alumno  {
     
     private final String nombre;
     private String correo;
-    private String telefono;
+    private int telefono;
     private String direccion;
     private String contraseña;
     
-    public Alumno(String nombre, String correo, String telefono, 
+    public Alumno(String nombre, String correo, int telefono, 
             String direccion, String contraseña) {
         this.nombre = nombre;
         this.correo = correo;
@@ -34,7 +34,7 @@ public class Alumno  {
         return this.correo;
     }
     
-    public String getTelefono() {
+    public int getTelefono() {
         return this.telefono;
     }
     

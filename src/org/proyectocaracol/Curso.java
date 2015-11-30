@@ -10,14 +10,14 @@ package org.proyectocaracol;
  */
 public class Curso {
     
-    private final String nombre;
+    private String nombre;
     private final int clave;
     private String descripcion;
     private String instructor;
     private double costo;
     private int cupo;
     
-    public Curso(String nombre, int clave, String descripcio, String instructor,
+    public Curso(String nombre, int clave, String descripcion, String instructor,
             double costo, int cupo) {
         this.nombre = nombre;
         this.clave = clave;
@@ -53,6 +53,9 @@ public class Curso {
     
     public double getCosto() {
         return this.costo;
+    }
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
     
     public void setCosto(double costo) {
