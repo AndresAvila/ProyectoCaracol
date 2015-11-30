@@ -25,8 +25,8 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
             
             //jPanel3.setVisible(false);
             String host = "jdbc:derby://localhost:1527/Caracol";
-            String username = "AndresAvila";
-            String password = "kakaroto";
+            String username = "Javo";
+            String password = "83560765";
 //            Vista_Principal v = new Vista_Principal();
 //            String a = Vista_Principal.alumno.getNombre();
             con = DriverManager.getConnection(host, username, password);
@@ -77,9 +77,11 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
         jLabel2.setText("Actualizar Datos");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 204, 204));
         jLabel3.setText("Pago:");
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 204, 204));
         jLabel4.setText("ID");
 
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 13)); // NOI18N
@@ -90,6 +92,7 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setForeground(new java.awt.Color(0, 204, 204));
         jLabel5.setText("Nombre:");
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -98,8 +101,10 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setForeground(new java.awt.Color(0, 204, 204));
         jCheckBox1.setText("SI");
 
+        jLabel6.setForeground(new java.awt.Color(0, 204, 204));
         jLabel6.setText("Curso: ");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +147,7 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(283, 283, 283))
+                .addGap(297, 297, 297))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,16 +174,14 @@ public class Actualizar_Alumno extends javax.swing.JFrame {
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(jButton1)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
