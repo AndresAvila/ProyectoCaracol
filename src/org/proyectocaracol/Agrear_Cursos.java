@@ -257,28 +257,31 @@ public class Agrear_Cursos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
-        String nombreCurso = jTextField2.getText();
-        String nombreInstructor = jTextField1.getText();
-        String cupo = jTextField3.getText();
-        String costo = jTextField4.getText();
-        String descripcion = jTextArea1.getText();
-        String clave = jTextField5.getText();
-        
-    
-        
-       
-        
-        try {
-        String query = "INSERT INTO Curso (nombre, clave, instructor, costo, cupo, descripcion) VALUES ('" +nombreCurso+ "', '"+ clave + "','"+nombreInstructor+ "', '"+ costo+ "', '"+ cupo+ "','"+descripcion+"')";
-        stmt.executeUpdate(query);
-        this.setVisible(false);
-        Menu_Administrador s = new Menu_Administrador();
-        s.setVisible(true);
+        if(jTextField1.getText().equals("")||jTextField2.getText().equals("")||jTextField3.getText().equals("")||jTextField4.getText().equals("")||jTextField5.getText().equals("")||jTextArea1.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Porfavor llene todos los campos");
         }
-        catch (SQLException err){
-            JOptionPane.showMessageDialog(this, err.getMessage());
+        else{
+            String nombreCurso = jTextField2.getText();
+            String nombreInstructor = jTextField1.getText();
+            String cupo = jTextField3.getText();
+            String costo = jTextField4.getText();
+            String descripcion = jTextArea1.getText();
+            String clave = jTextField5.getText();
+
+
+
+
+
+            try {
+            String query = "INSERT INTO Curso (nombre, clave, instructor, costo, cupo, descripcion) VALUES ('" +nombreCurso+ "', '"+ clave + "','"+nombreInstructor+ "', '"+ costo+ "', '"+ cupo+ "','"+descripcion+"')";
+            stmt.executeUpdate(query);
+            this.setVisible(false);
+            Menu_Administrador s = new Menu_Administrador();
+            s.setVisible(true);
+            }
+            catch (SQLException err){
+                JOptionPane.showMessageDialog(this, err.getMessage());
+            }
         }
         
 //        INSERT INTO Cursos (nombreCurso, Instructor, Cupo, Costo, Descripcion)
